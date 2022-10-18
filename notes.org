@@ -1,0 +1,15 @@
+* Related Notes
+<2022-10-17 Mon 20:02>: Great analogy for how 'Model View Controllers' work aka the restaurant analogy:
+- Model --> Chef, manages communicating to the database via Active Record methods
+- Controller --> Waiter, takes in order from the customer to then transmit data requests from the user aka 'View' to the chef aka the 'Model', and then delivers the final data to the 'View' aka the user
+- View --> Table, just renders the final order
+
+The main concept is convention over configuration aka if you use the correct convention with how files are created and named, then additional configuration isn't necessary.
+
+Example Of An MVC For A 'articles' Database Table
+- 'app/models/article.rb': model file that contains validations, database relationships, callbacks, and custom logic for articles
+- 'app/controllers/articles_controller.rb': file that manages data flow for the article behavior, and contains CRUD (Create Read Update Delete) methods
+- 'app/views/articles' directory: contains views for each of the pages that the end user accesses
+
+NOTE:
+- The 'model' file will inherit from the 'ActiveRecord::Base' class
